@@ -40,13 +40,9 @@ def parse_item(index, item, types=field_types):
     result_item = item.replace('\'', '\'\'').replace('"', '\'').replace('&', '&.').replace('""', '"')
     if current_type == 'TextNotNull':
         result_item = '\'' + result_item + '\''
-    elif current_type == 'Text':
+    elif current_type == 'Text' or current_type == 'Datetime':
         result_item = 'NULL' if result_item == '' else '\'' + result_item + '\''
-    elif current_type == 'Datetime':
-        result_item = 'NULL' if result_item == '' else '\'' + result_item + '\''
-    elif current_type == 'Numeric':
-        result_item = 'NULL' if result_item == '' else result_item
-    elif current_type == 'Boolean':
+    elif current_type == 'Numeric' or current_type == 'Boolean':
         result_item = 'NULL' if result_item == '' else result_item
     else:
         result_item = 'NULL' if result_item == '' else result_item

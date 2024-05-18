@@ -21,6 +21,7 @@ The first line of the CSV file is the header of the table. You can optionally to
 * `TextNotNull` :  The data will be surrounded by `'` to represent the string type. The empty item will be replaced by `''`.  
 * `Text` : Similar with `TextNotNull` but the empty item will be replaced by `NULL`.  
 * Other type signature such as `Number`, `Bool`, etc : The data will be directly what it is except emtpy item will be replaced by `NULL`.
+* numeric and boolean have been added (nont surounded in output by commas), but also datetime is treated in the same way as text.
 
 If there's no type signature for one field, it would be `TextNotNull`. See the format of the file `example.csv` and the result below.  
 
